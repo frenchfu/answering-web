@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -18,6 +19,7 @@ import com.google.common.collect.Lists;
 import com.mkyong.model.BingoUnit;
 
 @Controller
+@RequestMapping("/bingo")
 public class BingoController {
 	
 	//sessionid //id
@@ -52,22 +54,22 @@ public class BingoController {
 	private String message = "Hello World";
 		
 	
-    @GetMapping("/greeting")
+    @GetMapping("/greating")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
-        return "greeting";
+        return "/bingo/greating";
     }
     
     @GetMapping("/bingo")
     public String bingo(@RequestParam(name="identity", required=false, defaultValue="user") String identity, Model model) {
         model.addAttribute("identity", identity);
-        return "bingo";
+        return "/bingo/bingo";
     }
     
     @GetMapping("/bingoadmin")
     public String bingoadmin(@RequestParam(name="identity", required=false, defaultValue="user") String identity, Model model) {
         model.addAttribute("identity", identity);
-        return "bingoadmin";
+        return "/bingo/bingoadmin";
     }
     
     @GetMapping("/getANewCard")
