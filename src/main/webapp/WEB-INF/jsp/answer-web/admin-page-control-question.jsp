@@ -70,18 +70,18 @@ th , td {
 	  <div id="monitorDiv">
 	  
 	  </div>
-	  <button type="button" onclick="pickARandomP('')" class="btn btn-primary">隨機抓一個人</button>
+	  <button type="button" onclick="pickARandomP()" class="btn btn-primary">隨機抓一個人</button>
 	  <button type="button" onclick="openPage('pageHome')" class="btn btn-primary">返回</button>
 	</div>
 	<div class="form-group"  style="display: none;" align="center" id="pagePlayType" >
 	  <h2>選擇玩法</h2>
 	  <div >
-	  	<button type="button" onclick="setAnswerRaceType('CLICK_END_LESS','不停的按')" class="btn btn-danger">不停的按</button><br/><br/>
-	  	<button type="button" onclick="setAnswerRaceType('CLICK_TO_CLEAR_NUM','突然出現的BUTTEN 同時')" class="btn btn-success">突然出現的BUTTEN 同時</button><br/><br/>
-	  	<button type="button" onclick="setAnswerRaceType('SUNNDELY_SHOW_SYNC','突然出現的BUTTEN 不同時')" class="btn btn-info">突然出現的BUTTEN 不同時</button><br/><br/>
-	  	<button type="button" onclick="setAnswerRaceType('MATH_CALCULETE','計算題')" class="btn btn-warning">計算題</button><br/><br/>
+	  	<!--  <button type="button" onclick="setAnswerRaceType('CLICK_END_LESS','不停的按')" class="btn btn-danger">不停的按</button><br/><br/>-->
+	  	<!-- <button type="button" onclick="setAnswerRaceType('CLICK_TO_CLEAR_NUM','突然出現的BUTTEN 同時')" class="btn btn-success">突然出現的BUTTEN 同時</button><br/><br/>-->
+	  	<!-- <button type="button" onclick="setAnswerRaceType('SUNNDELY_SHOW_SYNC','突然出現的BUTTEN 不同時')" class="btn btn-info">突然出現的BUTTEN 不同時</button><br/><br/>-->
+	  	<!-- <button type="button" onclick="setAnswerRaceType('MATH_CALCULETE','計算題')" class="btn btn-warning">計算題</button><br/><br/>-->
 	  	<button type="button" onclick="setAnswerRaceType('JUST_FASTST','最快答題者')" class="btn btn-success">最快答題者</button><br/><br/>
-	  	<button type="button" onclick="setAnswerRaceType('RANDOM_PICK','隨機挑選')" class="btn btn-info">隨機挑選</button><br/><br/><br/>
+	  	<!-- <button type="button" onclick="setAnswerRaceType('RANDOM_PICK','隨機挑選')" class="btn btn-info">隨機挑選</button><br/><br/><br/>-->
 	  </div>
 	  <button type="button" onclick="openPage('pageHome')" class="btn btn-primary">返回</button>
 	</div>
@@ -351,18 +351,18 @@ function loadAdminObjToHtml(){
 	
 	var monitorHeml = "";
 	if(!!adminObj.randomParticipant && !!adminObj.randomParticipant.id){
-		monitorHeml += "<h1>隨機挑選 ID:"+adminObj.randomParticipant.id+"</h1><br/>";
-		monitorHeml += "<h1>隨機挑選 姓名:"+adminObj.randomParticipant.localName+"</h1><br/>";
+		monitorHeml += "<span>隨機挑選 ID:"+adminObj.randomParticipant.id+"</span><br/>";
+		monitorHeml += "<span>隨機挑選 姓名:"+adminObj.randomParticipant.localName+"</span><br/>";
 	}
 	if(!!adminObj.currentQuestion && !!adminObj.currentQuestion.pricaeParticipantModel){		
-		monitorHeml += "<h1>得獎者ID:"+adminObj.currentQuestion.pricaeParticipantModel.id+"</h1><br/>";
-		monitorHeml += "<h1>得獎者名稱:"+adminObj.currentQuestion.pricaeParticipantModel.localName+"</h1><br/>";
+		monitorHeml += "<span>得獎者ID:"+adminObj.currentQuestion.pricaeParticipantModel.id+"</span><br/>";
+		monitorHeml += "<span>得獎者名稱:"+adminObj.currentQuestion.pricaeParticipantModel.localName+"</span><br/>";
 	}
-	if(!!adminObj.inaAnswerACounter || inaAnswerBCounter || inaAnswerCCounter || inaAnswerDCounter){		
-		monitorHeml += "<h1>選A人數:"+adminObj.inaAnswerACounter+"</h1><br/>";
-		monitorHeml += "<h1>選B人數:"+adminObj.inaAnswerBCounter+"</h1><br/>";
-		monitorHeml += "<h1>選C人數:"+adminObj.inaAnswerCCounter+"</h1><br/>";
-		monitorHeml += "<h1>選D人數:"+adminObj.inaAnswerDCounter+"</h1><br/>";
+	if(!!adminObj.inaAnswerACounter || !!adminObj.iadminObj.inaAnswerBCounter || !!adminObj.iadminObj.inaAnswerCCounter || !!adminObj.iadminObj.inaAnswerDCounter){		
+		monitorHeml += "<span>選A人數:"+adminObj.inaAnswerACounter+"</span><br/>";
+		monitorHeml += "<span>選B人數:"+adminObj.inaAnswerBCounter+"</span><br/>";
+		monitorHeml += "<span>選C人數:"+adminObj.inaAnswerCCounter+"</span><br/>";
+		monitorHeml += "<span>選D人數:"+adminObj.inaAnswerDCounter+"</span><br/>";
 	}
 	$("#monitorDiv").html(monitorHeml);
 	

@@ -66,7 +66,7 @@ th , td {
 	  	
 	  	</div>
 		<button type="button"  id="next" onclick="getQuestions()" class="btn btn-primary">當主持人說開始時點我</button>
-		<button type="button"  id="counter" onclick="counterPlus()" class="btn btn-primary">點點樂</button> <button type="button"  id="counter2" onclick="counterPlus()" class="btn btn-primary">點點樂2</button>
+		<!--  <button type="button"  id="counter" onclick="counterPlus()" class="btn btn-primary">點點樂</button> <button type="button"  id="counter2" onclick="counterPlus()" class="btn btn-primary">點點樂2</button>-->
 	  </div>
 	  
 	  
@@ -185,14 +185,14 @@ function loadQuestion(inputQuestion){
 	}
 }
 
-var idNumArray = ["","A","B","C","D"];
+var idNumArray = ["","A","B","C","D","E","F","G"];
 
 function load_JUST_FASTST(question){
 	
 	$("#playTytle").text("越快送出正確答案 得獎機會越大喔~~~");
 	
 	var html = "";
-	for(var i = 1 ; i < 5; i++){
+	for(var i = 1 ; i < question.options.length; i++){
 		var option = question.options[i];
 		html += "<button id=\"q_"+i+"\" type=\"button\" onclick=\"choiceQ("+i+")\" class=\"btn btn-warning\" >"+idNumArray[i]+":"+option+"</button><br/><br/>";
 	}

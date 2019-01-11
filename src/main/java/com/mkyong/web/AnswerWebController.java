@@ -333,7 +333,7 @@ public class AnswerWebController {
 		
     	if(questionUnitGoing.getAnswerRaceType() == AnswerRaceType.JUST_FASTST) {
     		if(participantModel.getHasGetPirce() == YesNo.Y) {//得過獎的人 WAIT 2.5秒
-    			Thread.currentThread().sleep(2500);
+    			Thread.currentThread().sleep(10000);
     		}
     		doGetFirstPrice(participantModel);
     	}	
